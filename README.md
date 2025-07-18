@@ -11,13 +11,13 @@
     <br>
 </p>
 
-<p align="center">
+<!-- <p align="center">
     Get on <a href="https://ankiweb.net/shared/info/1840818335">AnkiWeb</a> |
     <a href="https://forums.ankiweb.net/t/tippy-tooltips-official-support/11844">Support</a>
 </p>
-<br>
+<br> -->
 
-> ⚠️ For bug reports and feature requests, please use the [Anki Forum thread](https://forums.ankiweb.net/t/tippy-tooltips-official-support/11844).
+<!-- > ⚠️ For bug reports and feature requests, please use the [Anki Forum thread](https://forums.ankiweb.net/t/tippy-tooltips-official-support/11844). -->
 
 ---
 
@@ -57,13 +57,18 @@ and its build scripts, which are based on [New Format Pack](https://github.com/h
 
 ## Building
 
-Navigate to `tools/` and make the bash scripts executable.
+Navigate to `tools-win/` and make the bash scripts executable.
 
 For development builds use:
 
-```shell
+<!-- ```shell
 tools/dev.sh
+``` -->
+```shell
+tools-win/dev.bat
 ```
+
+
 
 Console logs are preserved in this mode and code is not minified. To see the effect of `ts/` changes,
 just reopen the webview. Changes to `python/` require a fresh build.

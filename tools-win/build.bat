@@ -20,9 +20,6 @@
 
 @REM echo 'Build successful!'
 
-
-@echo off
-
 set "DIR=%~dp0.."
 pushd %DIR%
 set "DIR=%CD%"
@@ -33,12 +30,13 @@ git clean -fdx "%DIR%\dist"
 if not exist "%DIR%\dist" mkdir "%DIR%\dist"
 robocopy "%DIR%\src\python" "%DIR%\dist" /E
 
-if not exist "%DIR%\dist\gui\forms\qt5" mkdir "%DIR%\dist\gui\forms\qt5"
+@REM if not exist "%DIR%\dist\gui\forms\qt5" mkdir "%DIR%\dist\gui\forms\qt5"
 if not exist "%DIR%\dist\gui\forms\qt6" mkdir "%DIR%\dist\gui\forms\qt6"
 
 for %%F in ("%DIR%\designer\*.ui") do (
-  python -m PyQt5.uic.pyuic "%%F" > "%DIR%\dist\gui\forms\qt5\%%~nF_ui.py"
+  echo Processing %%F
   python -m PyQt6.uic.pyuic "%%F" > "%DIR%\dist\gui\forms\qt6\%%~nF_ui.py"
+  echo errorlevel: %ERRORLEVEL%
 )
 
 if not exist "%DIR%\dist\web" mkdir "%DIR%\dist\web"
